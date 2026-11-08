@@ -18,9 +18,11 @@ class PromptRequest(BaseModel):
     level: int
     user_prompt: str
 
-@app.post("/api/index")
 @app.post("/api/chat")
+@app.post("/chat")
+@app.post("/api/index")
 @app.post("/")
+
 def handle_chat(req: PromptRequest):
     user_input = req.user_prompt.strip()
 
